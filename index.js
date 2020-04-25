@@ -1,7 +1,13 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 
+// init express
 const app = express();
+
+// body-parser middleware
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 /* ROUTES */
 app.get('/login', (req, res) => {
@@ -9,7 +15,9 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  //TODO
+  console.log('Auth request recieved');
+  const { username, password } = req.body;
+  console.log(username, password);
 });
 
 app.get('/success', (req, res) => {
