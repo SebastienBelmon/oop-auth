@@ -31,8 +31,6 @@ app.post('/login', (req, res) => {
 
   // validation des credentials ici
   // ici ca va etre le client de ton systeme d'auth
-
-  // on suppose qu'on a fait const authManager = require('auth')('hardcoded')m
   const isCredentialValidated = authManager.validateCredentials(
     username,
     password
