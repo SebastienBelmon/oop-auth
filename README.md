@@ -2,6 +2,21 @@
 
 Mini projet pour apprendre l'OOP
 
+# Getting started
+
+Install project
+
+```
+git clone https://github.com/SebastienBelmon/oop-auth.git
+npm install
+```
+
+start
+```
+npm run start
+```
+
+Go to [http://localhost:3000/login](http://localhost:3000/login)
 
 # Objectifs
 
