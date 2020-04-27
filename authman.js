@@ -13,7 +13,7 @@ class IAuthManager {
    * valide les logs d'un utilisateur
    * @param {string} username username de l'utilisateur
    * @param {string} password password de l'utilisateur
-   * @returns {bool} Boolean
+   * @returns {boolean} Boolean
    */
   validateCredentials(username, password) {
     return true;
@@ -32,7 +32,7 @@ class AcceptAuthManager extends IAuthManager {
    * valide les logs d'un utilisateur
    * @param {string} username username de l'utilisateur
    * @param {string} password password de l'utilisateur
-   * @returns {bool} Boolean
+   * @returns {boolean} Boolean
    */
   validateCredentials(username, password) {
     return true;
@@ -48,7 +48,7 @@ class DenyAuthManager extends IAuthManager {
    * valide les logs d'un utilisateur
    * @param {string} username username de l'utilisateur
    * @param {string} password password de l'utilisateur
-   * @returns {bool} Boolean
+   * @returns {boolean} Boolean
    */
   validateCredentials(username, password) {
     return false;
@@ -69,7 +69,7 @@ class HardcodedAuthManager extends IAuthManager {
    * valide les logs d'un utilisateur
    * @param {string} username username de l'utilisateur
    * @param {string} password password de l'utilisateur
-   * @returns {bool} Boolean
+   * @returns {boolean} Boolean
    */
   validateCredentials(username, password) {
     return (
@@ -90,7 +90,7 @@ class RestAPIAuthManager extends IAuthManager {
    * valide les logs d'un utilisateur
    * @param {string} username username de l'utilisateur
    * @param {string} password password de l'utilisateur
-   * @returns {bool} Boolean
+   * @returns {boolean} Boolean
    */
   async validateCredentials(username, password) {
     //! lien example pour requete sur une API Rest : ne fonctionne plus
