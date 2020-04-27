@@ -13,7 +13,7 @@ class IAuthManager {
    * valide les logs d'un utilisateur
    * @param {string} username username de l'utilisateur
    * @param {string} password password de l'utilisateur
-   * @return {bool} Boolean
+   * @returns {bool} Boolean
    */
   validateCredentials(username, password) {
     return true;
@@ -32,7 +32,7 @@ class AcceptAuthManager extends IAuthManager {
    * valide les logs d'un utilisateur
    * @param {string} username username de l'utilisateur
    * @param {string} password password de l'utilisateur
-   * @return {bool} Boolean
+   * @returns {bool} Boolean
    */
   validateCredentials(username, password) {
     return true;
@@ -48,7 +48,7 @@ class DenyAuthManager extends IAuthManager {
    * valide les logs d'un utilisateur
    * @param {string} username username de l'utilisateur
    * @param {string} password password de l'utilisateur
-   * @return {bool} Boolean
+   * @returns {bool} Boolean
    */
   validateCredentials(username, password) {
     return false;
@@ -69,7 +69,7 @@ class HardcodedAuthManager extends IAuthManager {
    * valide les logs d'un utilisateur
    * @param {string} username username de l'utilisateur
    * @param {string} password password de l'utilisateur
-   * @return {bool} Boolean
+   * @returns {bool} Boolean
    */
   validateCredentials(username, password) {
     return (
@@ -90,10 +90,11 @@ class RestAPIAuthManager extends IAuthManager {
    * valide les logs d'un utilisateur
    * @param {string} username username de l'utilisateur
    * @param {string} password password de l'utilisateur
-   * @return {bool} Boolean
+   * @returns {bool} Boolean
    */
   async validateCredentials(username, password) {
-    const userRecords = await this._getJson('http://zhln.eu:8000/users.json'); // ca ?
+    //! lien example pour requete sur une API Rest : ne fonctionne plus
+    const userRecords = await this._getJson('http://zhln.eu:8000/users.json');
 
     return (
       userRecords.filter(
@@ -135,7 +136,7 @@ function authManFactory(authMode) {
       return new RestAPIAuthManager();
       break;
     default:
-      throw new Error('specify a mode, fdp');
+      throw new Error('specify a mode');
       break;
   }
 }
